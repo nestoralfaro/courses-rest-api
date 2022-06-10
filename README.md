@@ -3,9 +3,10 @@
 This restful API handles the following services for a user (taken from [Dr. Foust's project description](https://cs.harding.edu/gfoust/classes/comp4310/projects/api)):
 
 ## Instructions to execute
-To execute it on your local machine, clone the repository and run
+To execute it on your local machine, clone the repository and run.
 - `npm install` to install the necessary APIs for the application.
-- `npm run start` to start the server which should be listening on port `8000` or as specified on `lib/config.js`
+- `npm run start` to start the server which should be listening on port `8000` or as specified on `lib/config.js`.
+- Requires a MongoDB server.
 
 ## Services
 
@@ -29,12 +30,12 @@ Rules:
 
 Services:
 
-- `GET /api/courses` — return a list of all courses (only populates `id`, `subject`, and `number`)
-- `GET /api/courses/:courseid` — get a specific course (populates all fields except `students`)
+- `GET /api/courses` — return a list of all courses (only populates `id`, `subject`, and `number`).
+- `GET /api/courses/:courseid` — get a specific course (populates all fields except `students`).
 - `GET /api/courses/users/:userid` — get all courses for which specified user is teacher, and all courses for which specified user is student (only populates `id`, `subject`, and `number`).
-- `POST /api/courses` — create a new course
-- `PUT /api/courses/:courseid` — update a specific course
-- `DELETE /api/courses/:courseid` — delete a specific course
+- `POST /api/courses` — create a new course.
+- `PUT /api/courses/:courseid` — update a specific course.
+- `DELETE /api/courses/:courseid` — delete a specific course.
 
 Rules:
 
@@ -50,15 +51,15 @@ Rules:
 
 Services:
 
-- `GET /api/rosters/:classid` — return a list of all students for a particular class (populates all fields)
-- `PUT /api/rosters/:classid/:userid` — add student to class
-- `DELETE /api/rosters/:classid/:userid` — remove student from class
+- `GET /api/rosters/:classid` — return a list of all students for a particular class (populates all fields).
+- `PUT /api/rosters/:classid/:userid` — add student to class.
+- `DELETE /api/rosters/:classid/:userid` — remove student from class.
 
 Rules:
 
 - The `:classid` parameter is the same as in the class web services.
 - The `:userid` parameter is the same as in the user web services.
-- The `PUT` and `DELETE` services should return only the userid of the student that was just added or removed
+- The `PUT` and `DELETE` services should return only the userid of the student that was just added or removed.
 - Note that none of these services have any content in the body of the request; all necessary information is available in the URL.
 
 ## Technologies used
