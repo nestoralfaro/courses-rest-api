@@ -2,6 +2,13 @@
 
 This restful API handles the following services for a user (taken from [Dr. Foust's project description](https://cs.harding.edu/gfoust/classes/comp4310/projects/api)):
 
+## Instructions to execute
+To execute it on your local machine, clone the repository and run
+- `npm install` to install the necessary APIs for the application.
+- `npm run start` to start the server which should be listening on port `8000` or as specified on `lib/config.js`
+
+## Services
+
 #### User
 
 Services:
