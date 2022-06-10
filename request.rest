@@ -1,0 +1,96 @@
+@ip = http://localhost:8000
+
+# =========Services for User documents=========
+# TODO: check errors, add the last two servers, and do an overall check.
+
+# return a list of all users (only populate id and username)
+GET http://localhost:8000/api/users
+
+###
+# get a specific user (populate all fields)
+GET {{ip}}/api/users/kclow
+
+###
+# create a new user
+POST {{ip}}/api/users
+Content-Type: application/json
+
+{
+    "username": "kclow",
+    "firstname": "Ken",
+    "lastname": "Clow",
+    "email": "kclow@harding.edu"
+}
+
+# { "username": "jblew", "firstname": "Jue", "lastname": "Blew", "email": "jblew@harding.edu" }
+# { "username": "jblow", "firstname": "Joe", "lastname": "Blow" }
+# { "username": "jdoe", "firstname": "John", "lastname": "Doe" }
+# { "username": "jroe", "firstname": "Jane", "lastname": "Roe" }
+
+###
+# update a specific user
+PUT {{ip}}/api/users/kclow
+Content-Type: application/json
+
+{
+    "username": "123123123"
+}
+
+###
+# delete a specific user
+DELETE {{ip}}/api/users/123123123
+
+# =========Services for Course documents=========
+
+###
+# return a list of all courses (only populate id, subject, and number)
+GET {{ip}}/api/courses
+
+###
+# get a specific course (populate all fields except students)
+GET {{ip}}/api/courses/arte2030
+
+###
+# get all courses for which specified user is teacher, and all
+# courses for which specified user is student
+# (only populate id, subject, and number)
+GET {{ip}}/api/courses/users/kclow
+
+###
+# create a new course
+POST {{ip}}/api/courses
+Content-Type: application/json
+
+{"subject": "arte", "number": 2030, "title": "Drawing", "teacher": "6241e8f08295262d3455f0ef"}
+
+# {"subject": "hist", "number": 1010, "title": "WestCiv", "teacher": "623aa562e927a076efdd40be", "students": ["623aa5e1e927a076efdd40d9", "623aa52fe927a076efdd40b8"]}
+# {"subject": "comp", "number": 3010, "title": "AI", "teacher": "623aa562e927a076efdd40be", "students": ["623aa5e1e927a076efdd40d9", "623aa52fe927a076efdd40b8"]}
+
+###
+# update a specific course
+PUT {{ip}}/api/courses/arte2030
+Content-Type: application/json
+
+{"subject": "arte", "number": 2030, "title": "Drawing", "teacher": "623aa52fe927a076efdd40b8", "students": ["623aa562e927a076efdd40be", "623aa5e1e927a076efdd40d9"]}
+
+# { "title": "WC II", "teacher": "623aa562e927a076efdd40be", "students": ["623aa5e1e927a076efdd40d9", "623aa52fe927a076efdd40b8"]}
+# {"subject": "comp", "number": 3010, "title": "AI", "teacher": "623aa562e927a076efdd40be", "students": ["623aa5e1e927a076efdd40d9", "623aa52fe927a076efdd40b8"]}
+
+###
+# delete a specific course
+DELETE {{ip}}/api/courses/arte2030
+
+# =========Services interacting with Class documents=========
+
+###
+# return a list of all students for a particular class
+# (populate all fields)
+GET {{ip}}/api/rosters/arte2030 
+
+###
+# add student to class
+PUT {{ip}}/api/rosters/arte2030/kclow
+
+###
+# remove student from class
+DELETE {{ip}}/api/rosters/arte2030/kclow 

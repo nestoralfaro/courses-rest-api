@@ -1,0 +1,8 @@
+.vscode
+node_modules
+package-lock.json
+sessions
+coverage
+db
+restful-api-1.0.0.tgz
+test

@@ -1,0 +1,34 @@
+{
+  "name": "restful-api",
+  "version": "1.1.0",
+  "description": "RESTful API Project for COMP4310",
+  "main": "lib/server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node .",
+    "start:watch": "nodemon -i sessions .",
+    "startdb": "mongod --dbpath ./db",
+    "test:watch": "jest --watchAll --verbose",
+    "user-test:watch": "jest ./test/users.test.js --watchAll --verbose",
+    "course-test:watch": "jest ./test/courses.test.js --watchAll --verbose",
+    "roster-test:watch": "jest ./test/rosters.test.js --watchAll --verbose",
+    "test": "jest"
+  },
+  "author": "Nestor Alfaro",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "mongodb-memory-server": "^8.4.1",
+    "mongoose": "^6.2.7",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
