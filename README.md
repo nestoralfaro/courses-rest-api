@@ -1,9 +1,5 @@
 # RESTFUL API COMP4310
 
-## Author: Nestor Alfaro
-
-### Description
-
 This restful API handles the following services for a user (taken from [Dr. Foust's project description](https://cs.harding.edu/gfoust/classes/comp4310/projects/api)):
 
 #### User
@@ -63,5 +59,3 @@ Rules:
 - Mongoose and MongoDB
 - Nodejs
 - Express
-
-Absolutely a fun project to work with. Learned a lot. Still missing to implement assignments, and some code design improvements. (if only I had more time :c)
